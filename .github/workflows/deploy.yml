@@ -32,10 +32,11 @@ jobs:
       - name: Prepare Pages Output
         run: |
           cp dist/server/server.js dist/client/_worker.js
+          cp dist/server/server.js dist/client/server.js
           cp dist/server/assets/* dist/client/assets/
 
       - name: Deploy to Cloudflare Pages
-        run: npx wrangler pages deploy dist/client --project-name=altani-website
+        run: npx wrangler pages deploy dist/client --project-name=altani-website --no-bundle
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: 942842364f06ec3a739c5110ab0e8f59
