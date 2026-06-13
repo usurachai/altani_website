@@ -31,7 +31,8 @@ jobs:
 
       - name: Prepare Pages Output
         run: |
-          cp dist/server/server.js dist/client/_worker.js
+          mkdir -p dist/client/functions
+          cp dist/server/server.js dist/client/functions/[[path]].js
           cp dist/server/server.js dist/client/server.js
           cp dist/server/assets/* dist/client/assets/
 
