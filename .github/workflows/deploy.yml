@@ -35,6 +35,6 @@ jobs:
           cp dist/server/assets/* dist/client/assets/
 
       - name: Deploy to Cloudflare Pages
-        run: npx wrangler pages deploy dist/client --project-name=altani-website --account-id 942842364f06ec3a739c5110ab0e8f59
+        run: npx wrangler pages deploy --account-id 942842364f06ec3a739c5110ab0e8f59 dist/client --project-name=altani-website
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
