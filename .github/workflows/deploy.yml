@@ -29,12 +29,17 @@ jobs:
       - name: Build Project
         run: bun run build
 
-      - name: Prepare Pages Output
+      - name: Pre-render HTML
         run: |
-          mkdir -p dist/client/functions
-          cp dist/server/server.js dist/client/functions/[[path]].js
-          cp dist/server/server.js dist/client/server.js
-          cp dist/server/assets/* dist/client/assets/
+          node --input-type=module -e "
+            import { writeFileSync } from 'fs';
+            const m = await import('./dist/server/server.js');
+            const server = m.default;
+            const response = await server.fetch(new Request('http://localhost/'), {}, {});
+            const html = await response.text();
+            writeFileSync('dist/client/index.html', html);
+            console.log('index.html created: ' + html.length + ' bytes');
+          "
 
       - name: Deploy to Cloudflare Pages
         run: npx wrangler pages deploy dist/client --project-name=altani-website
