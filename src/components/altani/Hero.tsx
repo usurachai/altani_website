@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useT } from "@/lib/i18n";
 import { Tilt, Magnetic } from "@/components/altani/Tilt";
-import blackFront from "@/assets/altani/black-front.jpg.asset.json";
-import campaign from "@/assets/altani/campaign.jpg.asset.json";
+import blackFrontUrl from "@/assets/altani/black-front.jpg";
+import campaignUrl from "@/assets/altani/campaign.jpg";
 
 export function Hero() {
   const t = useT();
@@ -135,7 +135,7 @@ export function Hero() {
             </div>
 
             <img
-              src={blackFront.url}
+              src={blackFrontUrl}
               alt="ALTANI P1 Electric — matte black"
               className="absolute inset-0 h-full w-full object-contain p-6 sm:p-10 float-y"
               style={{ mixBlendMode: "screen", transform: "translateZ(40px)" }}
@@ -180,7 +180,7 @@ export function Hero() {
       </div>
 
       {/* preload */}
-      <link rel="preload" as="image" href={campaign.url} />
+      <link rel="preload" as="image" href={campaignUrl} />
     </section>
   );
 }

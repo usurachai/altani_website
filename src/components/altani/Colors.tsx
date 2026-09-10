@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import { useT, useLang } from "@/lib/i18n";
 import { Tilt } from "@/components/altani/Tilt";
-import greyFront from "@/assets/altani/grey-front.jpg.asset.json";
-import greySide from "@/assets/altani/grey-side.jpg.asset.json";
-import greenFront from "@/assets/altani/green-front.jpg.asset.json";
-import greenSide from "@/assets/altani/green-side.jpg.asset.json";
-import blackFront from "@/assets/altani/black-front.jpg.asset.json";
-import blackSide from "@/assets/altani/black-side.jpg.asset.json";
-import whiteFront from "@/assets/altani/white-front.jpg.asset.json";
-import whitePinkSide from "@/assets/altani/white-pink-side.jpg.asset.json";
+import greyFrontUrl from "@/assets/altani/grey-front.jpg";
+import greySideUrl from "@/assets/altani/grey-side.jpg";
+import greenFrontUrl from "@/assets/altani/green-front.jpg";
+import greenSideUrl from "@/assets/altani/green-side.jpg";
+import blackFrontUrl from "@/assets/altani/black-front.jpg";
+import blackSideUrl from "@/assets/altani/black-side.jpg";
+import whiteFrontUrl from "@/assets/altani/white-front.jpg";
+import whitePinkSideUrl from "@/assets/altani/white-pink-side.jpg";
 
 // theme = drives global --neon / --ember / page tint when user picks a colorway
 export const COLORS = [
-  { id: "grey",  nameTh: "เทา",   nameEn: "Grey",  body: "#8a8d92", seat: "#1a1a1a", accent: "#c9cdd3", theme: "#c9cdd3", themeWarm: "#6b7280", bg: "#e9ebee", fg: "#0f1115", front: greyFront.url,  side: greySide.url },
-  { id: "black", nameTh: "ดำ",    nameEn: "Black", body: "#1a1a1a", seat: "#5a3a22", accent: "#2d2d2d", theme: "#c6f432", themeWarm: "#ff3b30", bg: "#070707", fg: "#f5f7ea", front: blackFront.url, side: blackSide.url },
-  { id: "white", nameTh: "ขาว",   nameEn: "White", body: "#ececea", seat: "#d99aa8", accent: "#ffffff", theme: "#f7c7d0", themeWarm: "#e85a7a", bg: "#fff5f7", fg: "#1a0c10", front: whiteFront.url, side: whitePinkSide.url },
-  { id: "green", nameTh: "เขียว", nameEn: "Green", body: "#5a6648", seat: "#4a5236", accent: "#7a8866", theme: "#9bbf6a", themeWarm: "#5a6648", bg: "#0f1410", fg: "#eaf2dc", front: greenFront.url, side: greenSide.url },
+  { id: "grey",  nameTh: "เทา",   nameEn: "Grey",  body: "#8a8d92", seat: "#1a1a1a", accent: "#c9cdd3", theme: "#c9cdd3", themeWarm: "#6b7280", bg: "#e9ebee", fg: "#0f1115", front: greyFrontUrl,  side: greySideUrl },
+  { id: "black", nameTh: "ดำ",    nameEn: "Black", body: "#1a1a1a", seat: "#5a3a22", accent: "#2d2d2d", theme: "#c6f432", themeWarm: "#ff3b30", bg: "#070707", fg: "#f5f7ea", front: blackFrontUrl, side: blackSideUrl },
+  { id: "white", nameTh: "ขาว",   nameEn: "White", body: "#ececea", seat: "#d99aa8", accent: "#ffffff", theme: "#f7c7d0", themeWarm: "#e85a7a", bg: "#fff5f7", fg: "#1a0c10", front: whiteFrontUrl, side: whitePinkSideUrl },
+  { id: "green", nameTh: "เขียว", nameEn: "Green", body: "#5a6648", seat: "#4a5236", accent: "#7a8866", theme: "#9bbf6a", themeWarm: "#5a6648", bg: "#0f1410", fg: "#eaf2dc", front: greenFrontUrl, side: greenSideUrl },
 ];
 
 export function Colors() {

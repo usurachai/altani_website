@@ -1,7 +1,7 @@
 import { useT } from "@/lib/i18n";
 import { useReveal } from "@/hooks/use-reveal";
-import greySide from "@/assets/altani/grey-side.jpg.asset.json";
-import campaign from "@/assets/altani/campaign.jpg.asset.json";
+import greySideUrl from "@/assets/altani/grey-side.jpg";
+import campaignUrl from "@/assets/altani/campaign.jpg";
 
 function Block({
   img,
@@ -55,7 +55,7 @@ export function Lifestyle() {
     <section className="bg-background py-28 sm:py-40">
       <div className="mx-auto flex max-w-7xl flex-col gap-28 px-5 sm:px-8 sm:gap-40">
         <Block
-          img={greySide.url}
+          img={greySideUrl}
           alt="ALTANI P1 side profile in Urban Grey"
           tag={t.lifestyle.tag1}
           h={t.lifestyle.h1}
@@ -64,7 +64,7 @@ export function Lifestyle() {
           bg="bg-[oklch(0.95_0.005_270)]"
         />
         <Block
-          img={campaign.url}
+          img={campaignUrl}
           alt="ALTANI P1 lineup — four colorways"
           tag={t.lifestyle.tag2}
           h={t.lifestyle.h2}
